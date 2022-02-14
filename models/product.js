@@ -16,29 +16,24 @@ Product.init(
       primaryKey: true,
       autoIncrement: true
     },
-    trip_budget: {
+    product_name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    price: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: true
     },
-    traveller_amount: {
+    stock: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 1
+      defaultValue: 10
     },
-    traveller_id: {
+    category_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'traveller',
+        model: 'category',
         key: 'id',
-        unique: false
-      }
-    },
-    location_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'location',
-        key: 'id',
-        unique: false
       }
     }
   },
